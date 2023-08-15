@@ -13,18 +13,18 @@ const config = {
   social: {
     linkedin: 'natex',
     twitter: 'peepthispic',
-    mastodon: 'arifszn@mastodon.social',
+    mastodon: '',
     facebook: '',
     instagram: '',
     youtube: '', // example: 'pewdiepie'
     dribbble: '',
     behance: '',
     medium: 'natepotter35',
-    dev: 'arifszn',
+    dev: '',
     stackoverflow: '', // example: '1/jeff-atwood'
     skype: '',
     telegram: '',
-    website: 'https://arifszn.com',
+    website: '',
     phone: '',
     email: 'natepotter35@gmail.com',
   },
@@ -53,24 +53,24 @@ const config = {
       position: 'Data Engineer Intern',
       from: 'May 2022',
       to: 'August 2022',
-      companyLink: 'https://topconpositioning.com/',
+      companyLink: 'https://www.topconpositioning.com/',
     },
     {
       company: 'Build Group',
       position: 'Engineer Intern',
       from: 'May 2021',
       to: 'August 2021',
-      companyLink: 'https://buildgc.com',
+      companyLink: 'https://www.buildgc.com',
     },
   ],
-  /* certifications: [
+  certifications: [
     {
-      name: 'Lorem ipsum',
-      body: 'Lorem ipsum dolor sit amet',
-      year: 'March 2022',
+      name: 'AWS',
+      body: 'Solutions Architect Associate',
+      year: 'May 2023',
       link: 'https://example.com'
     },
-  ], */
+  ],
   education: [
     {
       institution: 'University of Wisconsin - Madison',
