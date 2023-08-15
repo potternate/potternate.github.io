@@ -19,7 +19,7 @@ const config = {
     youtube: '', // example: 'pewdiepie'
     dribbble: '',
     behance: '',
-    medium: 'arifszn',
+    medium: 'natepotter35',
     dev: 'arifszn',
     stackoverflow: '', // example: '1/jeff-atwood'
     skype: '',
@@ -73,16 +73,10 @@ const config = {
   ], */
   education: [
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2015',
-      to: '2019',
-    },
-    {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2012',
-      to: '2014',
+      institution: 'University of Wisconsin - Madison',
+      degree: 'B.S. Data Science',
+      from: '2018',
+      to: '2022',
     },
   ],
 
@@ -105,8 +99,8 @@ const config = {
   ],
   // Display blog posts from your medium or dev account. (Optional)
   blog: {
-    source: 'dev', // medium | dev
-    username: 'arifszn', // to hide blog section, keep it empty
+    source: 'medium', // medium | dev
+    username: 'natepotter35', // to hide blog section, keep it empty
     limit: 2, // How many posts to display. Max is 10.
   },
   googleAnalytics: {
