@@ -6,7 +6,7 @@ const config = {
     sortBy: 'updated', // stars | updated
     limit: 10, // How many projects to display.
     exclude: {
-      forks: false, // Forked projects will not be displayed if set to true.
+      forks: true, // Forked projects will not be displayed if set to true.
       projects: [], // These projects will not be displayed. example: ['my-project1', 'my-project2']
     },
   },
@@ -67,8 +67,14 @@ const config = {
     {
       name: 'AWS',
       body: 'Solutions Architect Associate',
-      year: 'May 2023',
-      link: 'https://example.com'
+      year: '',
+      link: 'https://www.credly.com/badges/e8828d56-7e10-45ae-b769-1318ad32e490'
+    },
+    {
+      name: 'AWS',
+      body: 'Cloud Practitioner',
+      year: '',
+      link: 'https://www.credly.com/badges/2c903953-c747-4dbd-bf63-b9e0e049e3f6'
     },
   ],
   education: [
