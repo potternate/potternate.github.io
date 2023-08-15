@@ -2,8 +2,8 @@
 
 const config = {
   github: {
-    username: 'arifszn', // Your GitHub org/user name. (Required)
-    sortBy: 'stars', // stars | updated
+    username: 'potternate', // Your GitHub org/user name. (Required)
+    sortBy: 'updated', // stars | updated
     limit: 10, // How many projects to display.
     exclude: {
       forks: false, // Forked projects will not be displayed if set to true.
@@ -11,8 +11,8 @@ const config = {
     },
   },
   social: {
-    linkedin: 'ariful-alam',
-    twitter: 'arif_szn',
+    linkedin: 'natex',
+    twitter: 'peepthispic',
     mastodon: 'arifszn@mastodon.social',
     facebook: '',
     instagram: '',
@@ -26,42 +26,41 @@ const config = {
     telegram: '',
     website: 'https://arifszn.com',
     phone: '',
-    email: 'arifulalamszn@gmail.com',
+    email: 'natepotter35@gmail.com',
   },
   resume: {
     fileUrl:
       'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
-    'PHP',
-    'Laravel',
-    'JavaScript',
-    'React.js',
-    'Node.js',
-    'Nest.js',
-    'MySQL',
-    'PostgreSQL',
+    'AWS',
+    'Python',
+    'Java',
     'Git',
+    'Linux',
+    'Tableau',
     'Docker',
-    'PHPUnit',
+    'Snowflake',
+    'Terraform',
+    'Spark',
+    'Kubernetes',
+    'HTML',
     'CSS',
-    'Antd',
-    'Tailwind',
   ],
   experiences: [
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'September 2021',
-      to: 'Present',
-      companyLink: 'https://example.com',
+      company: 'Topcon Positioning Systems',
+      position: 'Data Engineer Intern',
+      from: 'May 2022',
+      to: 'August 2022',
+      companyLink: 'https://topconpositioning.com/',
     },
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'July 2019',
+      company: 'Build Group',
+      position: 'Engineer Intern',
+      from: 'May 2021',
       to: 'August 2021',
-      companyLink: 'https://example.com',
+      companyLink: 'https://buildgc.com',
     },
   ],
   /* certifications: [
