@@ -93,7 +93,7 @@ const config = {
       description:
         'I built a website for a valet company using HTML, CSS, and JavaScript.',
       imageUrl: 'https://drive.google.com/file/d/1HbUd93GjlCiUKMucxArhSo00Toyw71mU/view?usp=sharing',
-      link: 'https://www.precision-parking-valet.web.app',
+      link: 'https://precision-parking-valet.web.app',
     },
     {
       title: 'Spotify Analysis',
