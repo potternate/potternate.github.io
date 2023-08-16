@@ -110,18 +110,18 @@ const config = {
       link: 'https://precision-parking-valet.web.app',
     },
     {
-      title: 'Spotify Analysis',
+      title: 'Twitter Reddit Bot',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-      imageUrl: 'https://via.placeholder.com/250x250',
-      link: 'https://example.com',
+        'An Automated Twitter Bot that scrapes images and captions from a custom Reddit Feed',
+      imageUrl: 'https://play-lh.googleusercontent.com/A-Rnrh0J7iKmABskTonqFAANRLGTGUg_nuE4PEMYwJavL3nPt5uWsU2WO_DSgV_mOOM=w480-h960-rw',
+      link: 'https://twitter.com/peepthispic',
     },
   ],
   // Display blog posts from your medium or dev account. (Optional)
   blog: {
     source: 'medium', // medium | dev
-    username: 'natepotter35', // to hide blog section, keep it empty
-    limit: 3, // How many posts to display. Max is 10.
+    username: 'natepotter34', // to hide blog section, keep it empty
+    limit: 2, // How many posts to display. Max is 10.
   },
   googleAnalytics: {
     id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
@@ -149,33 +149,16 @@ const config = {
     themes: [
       'light',
       'dark',
-      'cupcake',
-      'bumblebee',
-      'emerald',
-      'corporate',
       'synthwave',
-      'retro',
       'cyberpunk',
-      'valentine',
       'halloween',
-      'garden',
       'forest',
       'aqua',
-      'lofi',
-      'pastel',
-      'fantasy',
-      'wireframe',
-      'black',
       'luxury',
       'dracula',
-      'cmyk',
-      'autumn',
       'business',
-      'acid',
-      'lemonade',
       'night',
       'coffee',
-      'winter',
       'procyon',
     ],
 
