@@ -89,14 +89,14 @@ const config = {
   // To hide the `My Projects` section, keep it empty.
   externalProjects: [
     {
-      title: 'Project Name',
+      title: 'Website Development',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-      imageUrl: 'https://via.placeholder.com/250x250',
-      link: 'https://example.com',
+        'I built a website for a valet company using HTML, CSS, and JavaScript.',
+      imageUrl: 'https://imgur.com/dzsw80f',
+      link: 'https://www.precision-parking-valet.webapp',
     },
     {
-      title: 'Project Name',
+      title: 'Spotify Analysis',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
       imageUrl: 'https://via.placeholder.com/250x250',
