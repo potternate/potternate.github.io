@@ -103,7 +103,7 @@ const config = {
   // To hide the `My Projects` section, keep it empty.
   externalProjects: [
     {
-      title: 'Website Development',
+      title: 'Web Development',
       description:
         'I built a website for a valet company using HTML, CSS, and JavaScript.',
       imageUrl: 'https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png',
