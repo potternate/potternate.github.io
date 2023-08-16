@@ -106,7 +106,7 @@ const config = {
       title: 'Website Development',
       description:
         'I built a website for a valet company using HTML, CSS, and JavaScript.',
-      imageUrl: 'https://drive.google.com/file/d/1HbUd93GjlCiUKMucxArhSo00Toyw71mU/view?usp=sharing',
+      imageUrl: 'https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png',
       link: 'https://precision-parking-valet.web.app',
     },
     {
