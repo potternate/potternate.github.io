@@ -62,6 +62,20 @@ const config = {
       to: 'August 2021',
       companyLink: 'https://www.buildgc.com',
     },
+    {
+      company: 'Treasury Curve',
+      position: 'Data Engineer Intern',
+      from: 'May 2020',
+      to: 'August 2020',
+      companyLink: 'https://www.treasurycurve.com',
+    },
+    {
+      company: "O'Brien Mechanical",
+      position: 'Engineer Intern',
+      from: 'May 2019',
+      to: 'August 2019',
+      companyLink: 'https://www.buildgc.com',
+    },
   ],
   certifications: [
     {
