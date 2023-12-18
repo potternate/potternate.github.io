@@ -49,6 +49,13 @@ const config = {
   ],
   experiences: [
     {
+      company: 'Head Royce School',
+      position: 'Computer Science Educator',
+      from: 'August 2022',
+      to: 'Present',
+      companyLink: 'https://www.headroyce.org/',
+    },
+    {
       company: 'Topcon Positioning Systems',
       position: 'Data Engineer Intern',
       from: 'May 2022',
