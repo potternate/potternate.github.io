@@ -52,7 +52,7 @@ const config = {
       company: 'Head Royce School',
       position: 'Computer Science Educator',
       from: 'August 2023',
-      to: 'Present',
+      to: 'June 2024',
       companyLink: 'https://www.headroyce.org/',
     },
     {
