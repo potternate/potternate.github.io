@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleeper Discounts Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Sleeper Discounts Dashboard</h1>
+    <div id="line-chart"></div>
+    <div id="pie-chart"></div>
+
+    <script>
+        const csvUrl = 'https://raw.githubusercontent.com/potternate/potternate.github.io/sleeperdashboard/newsleeperdiscounts.csv';
+
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split('\n').slice(1); // Skip header row
+                const dates = [];
+                const percentages = [];
+                const statuses = [];
+
+                rows.forEach(row => {
+                    const cols = row.split(',');
+                    if (cols.length > 8) { // Ensure the row has enough columns
+                        console.log(cols); // Debugging: Log row contents to check
+                        dates.push(cols[0]); // Date
+                        const percentage = parseFloat(cols[6]); // Percentage
+                        if (!isNaN(percentage)) {
+                            percentages.push(percentage); // Add valid Percentage
+                        }
+                        statuses.push(cols[8]); // Status
+                    }
+                });
+
+                console.log(dates, percentages, statuses); // Debugging: Check arrays
+
+                // Plotly Line Chart for Percentage Over Time
+                const lineData = [{
+                    x: dates,
+                    y: percentages,
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: 'Discount Percentage'
+                }];
+                
+                Plotly.newPlot('line-chart', lineData);
+
+                // Plotly Pie Chart for Status
+                const statusCounts = statuses.reduce((acc, status) => {
+                    acc[status] = (acc[status] || 0) + 1;
+                    return acc;
+                }, {});
+
+                const pieData = [{
+                    values: Object.values(statusCounts),
+                    labels: Object.keys(statusCounts),
+                    type: 'pie'
+                }];
+                
+                Plotly.newPlot('pie-chart', pieData);
+            })
+            .catch(error => console.error('Error loading or parsing CSV:', error));
+    </script>
+</body>
+</html>
