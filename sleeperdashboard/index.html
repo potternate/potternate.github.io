@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>Sleeper Discounts Dashboard</h1>
-    <div id="line-chart"></div>
-    <div id="pie-chart"></div>
+    <div id="line-chart" style="width: 100%; height: 500px;"></div>
+    <div id="pie-chart" style="width: 100%; height: 500px;"></div>
 
     <script>
         const csvUrl = 'https://raw.githubusercontent.com/potternate/potternate.github.io/main/sleeperdashboard/newsleeperdiscounts.csv';
@@ -25,17 +25,26 @@
                 rows.forEach(row => {
                     const cols = row.split(',');
                     if (cols.length > 8) { // Ensure the row has enough columns
-                        console.log(cols); // Debugging: Log row contents to check
-                        dates.push(cols[0]); // Date
-                        const percentage = parseFloat(cols[6]); // Percentage
+                        const date = cols[0].trim();
+                        const percentage = parseFloat(cols[6].trim());
+                        const status = cols[8].trim();
+
+                        // Debugging: Log parsed data
+                        console.log({date, percentage, status});
+
+                        // Validate data before pushing
                         if (!isNaN(percentage)) {
-                            percentages.push(percentage); // Add valid Percentage
+                            dates.push(date); // Date
+                            percentages.push(percentage); // Percentage
                         }
-                        statuses.push(cols[8]); // Status
+                        if (status) {
+                            statuses.push(status); // Status
+                        }
                     }
                 });
 
-                console.log(dates, percentages, statuses); // Debugging: Check arrays
+                // Debugging: Check arrays
+                console.log({dates, percentages, statuses});
 
                 // Plotly Line Chart for Percentage Over Time
                 const lineData = [{
@@ -65,5 +74,7 @@
             .catch(error => console.error('Error loading or parsing CSV:', error));
     </script>
 </body>
+</html>
+
 </html>
 
