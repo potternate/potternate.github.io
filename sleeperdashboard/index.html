@@ -10,9 +10,8 @@
     <h1>Sleeper Discounts Dashboard</h1>
     <div id="line-chart"></div>
     <div id="pie-chart"></div>
-    
+
     <script>
-        // Updated GitHub raw CSV URL
         const csvUrl = 'https://raw.githubusercontent.com/potternate/potternate.github.io/sleeperdashboard/newsleeperdiscounts.csv';
 
         fetch(csvUrl)
@@ -25,10 +24,18 @@
 
                 rows.forEach(row => {
                     const cols = row.split(',');
-                    dates.push(cols[0]); // Date
-                    percentages.push(parseFloat(cols[6])); // Percentage (assuming it's the 7th column)
-                    statuses.push(cols[8]); // Status (assuming it's the 9th column)
+                    if (cols.length > 8) { // Ensure the row has enough columns
+                        console.log(cols); // Debugging: Log row contents to check
+                        dates.push(cols[0]); // Date
+                        const percentage = parseFloat(cols[6]); // Percentage
+                        if (!isNaN(percentage)) {
+                            percentages.push(percentage); // Add valid Percentage
+                        }
+                        statuses.push(cols[8]); // Status
+                    }
                 });
+
+                console.log(dates, percentages, statuses); // Debugging: Check arrays
 
                 // Plotly Line Chart for Percentage Over Time
                 const lineData = [{
@@ -54,7 +61,9 @@
                 }];
                 
                 Plotly.newPlot('pie-chart', pieData);
-            });
+            })
+            .catch(error => console.error('Error loading or parsing CSV:', error));
     </script>
 </body>
 </html>
+
