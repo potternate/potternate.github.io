@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sleeper Discounts Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
     <style>
         #table-container {
             margin-top: 20px;
@@ -59,17 +60,18 @@
         let fullData = []; // To store the full dataset
         let headers = []; // To store headers separately
 
-        fetch(csvUrl)
-            .then(response => response.text())
-            .then(data => {
-                const rows = data.split('\n').filter(row => row.trim() !== ''); // Remove empty rows
-                headers = rows[0].split(','); // Get column headers
-                fullData = rows.slice(1).map(row => row.split(',')); // Get data rows
+        Papa.parse(csvUrl, {
+            download: true,
+            header: true,
+            complete: (result) => {
+                headers = result.meta.fields; // Get column headers
+                fullData = result.data; // Get data rows
 
                 populateTable(fullData, headers);
                 populateFilterOptions(headers);
-            })
-            .catch(error => console.error('Error loading or parsing CSV:', error));
+            },
+            error: (error) => console.error('Error loading or parsing CSV:', error)
+        });
 
         function populateTable(data, headers) {
             const table = document.getElementById('data-table');
@@ -80,7 +82,7 @@
             thead.innerHTML = headers.map(header => `<th>${header}</th>`).join('');
 
             // Populate rows
-            tbody.innerHTML = data.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('');
+            tbody.innerHTML = data.map(row => `<tr>${headers.map(header => `<td>${row[header]}</td>`).join('')}</tr>`).join('');
         }
 
         function populateFilterOptions(headers) {
@@ -92,12 +94,8 @@
             const filterColumn = document.getElementById('filter-column').value;
             const filterValue = document.getElementById('filter-value').value.toLowerCase();
 
-            const columnIndex = headers.indexOf(filterColumn);
-
-            if (columnIndex === -1) return; // Exit if column is not found
-
             const filteredData = fullData.filter(row => {
-                return row[columnIndex].toLowerCase().includes(filterValue);
+                return row[filterColumn].toLowerCase().includes(filterValue);
             });
 
             populateTable(filteredData, headers);
