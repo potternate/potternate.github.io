@@ -4,77 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sleeper Discounts Dashboard</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        #table-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #filter-container {
+            margin-bottom: 10px;
+        }
+        label, select, input {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Sleeper Discounts Dashboard</h1>
-    <div id="line-chart" style="width: 100%; height: 500px;"></div>
-    <div id="pie-chart" style="width: 100%; height: 500px;"></div>
+
+    <div id="table-container">
+        <h2>Data Table</h2>
+        <div id="filter-container">
+            <label for="filter-column">Filter by Column:</label>
+            <select id="filter-column">
+                <!-- Options will be populated dynamically -->
+            </select>
+            <input type="text" id="filter-value" placeholder="Filter value">
+            <button onclick="applyFilter()">Apply Filter</button>
+        </div>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <!-- Headers will be populated dynamically -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated dynamically -->
+            </tbody>
+        </table>
+    </div>
 
     <script>
         const csvUrl = 'https://raw.githubusercontent.com/potternate/potternate.github.io/main/sleeperdashboard/newsleeperdiscounts.csv';
+
+        let fullData = []; // To store the full dataset
 
         fetch(csvUrl)
             .then(response => response.text())
             .then(data => {
                 const rows = data.split('\n').slice(1); // Skip header row
-                const dates = [];
-                const percentages = [];
-                const statuses = [];
+                const headers = rows[0].split(','); // Get column headers
+                fullData = rows.map(row => row.split(','));
 
-                rows.forEach(row => {
-                    const cols = row.split(',');
-                    if (cols.length > 8) { // Ensure the row has enough columns
-                        const date = cols[0].trim();
-                        const percentage = parseFloat(cols[6].trim());
-                        const status = cols[8].trim();
-
-                        // Debugging: Log parsed data
-                        console.log({date, percentage, status});
-
-                        // Validate data before pushing
-                        if (!isNaN(percentage)) {
-                            dates.push(date); // Date
-                            percentages.push(percentage); // Percentage
-                        }
-                        if (status) {
-                            statuses.push(status); // Status
-                        }
-                    }
-                });
-
-                // Debugging: Check arrays
-                console.log({dates, percentages, statuses});
-
-                // Plotly Line Chart for Percentage Over Time
-                const lineData = [{
-                    x: dates,
-                    y: percentages,
-                    type: 'scatter',
-                    mode: 'lines+markers',
-                    name: 'Discount Percentage'
-                }];
-                
-                Plotly.newPlot('line-chart', lineData);
-
-                // Plotly Pie Chart for Status
-                const statusCounts = statuses.reduce((acc, status) => {
-                    acc[status] = (acc[status] || 0) + 1;
-                    return acc;
-                }, {});
-
-                const pieData = [{
-                    values: Object.values(statusCounts),
-                    labels: Object.keys(statusCounts),
-                    type: 'pie'
-                }];
-                
-                Plotly.newPlot('pie-chart', pieData);
+                populateTable(fullData, headers);
+                populateFilterOptions(headers);
             })
             .catch(error => console.error('Error loading or parsing CSV:', error));
+
+        function populateTable(data, headers) {
+            const table = document.getElementById('data-table');
+            const thead = table.querySelector('thead tr');
+            const tbody = table.querySelector('tbody');
+
+            // Populate headers
+            thead.innerHTML = headers.map(header => `<th>${header}</th>`).join('');
+
+            // Populate rows
+            tbody.innerHTML = data.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('');
+        }
+
+        function populateFilterOptions(headers) {
+            const filterColumn = document.getElementById('filter-column');
+            filterColumn.innerHTML = headers.map(header => `<option value="${header}">${header}</option>`).join('');
+        }
+
+        function applyFilter() {
+            const filterColumn = document.getElementById('filter-column').value;
+            const filterValue = document.getElementById('filter-value').value.toLowerCase();
+
+            const filteredData = fullData.filter(row => {
+                const columnIndex = fullData[0].indexOf(filterColumn);
+                return row[columnIndex].toLowerCase().includes(filterValue);
+            });
+
+            populateTable(filteredData, fullData[0]);
+        }
     </script>
 </body>
 </html>
-
-</html>
-
