@@ -57,13 +57,14 @@
         const csvUrl = 'https://raw.githubusercontent.com/potternate/potternate.github.io/main/sleeperdashboard/newsleeperdiscounts.csv';
 
         let fullData = []; // To store the full dataset
+        let headers = []; // To store headers separately
 
         fetch(csvUrl)
             .then(response => response.text())
             .then(data => {
-                const rows = data.split('\n').slice(1); // Skip header row
-                const headers = rows[0].split(','); // Get column headers
-                fullData = rows.map(row => row.split(','));
+                const rows = data.split('\n').filter(row => row.trim() !== ''); // Remove empty rows
+                headers = rows[0].split(','); // Get column headers
+                fullData = rows.slice(1).map(row => row.split(',')); // Get data rows
 
                 populateTable(fullData, headers);
                 populateFilterOptions(headers);
@@ -91,12 +92,15 @@
             const filterColumn = document.getElementById('filter-column').value;
             const filterValue = document.getElementById('filter-value').value.toLowerCase();
 
+            const columnIndex = headers.indexOf(filterColumn);
+
+            if (columnIndex === -1) return; // Exit if column is not found
+
             const filteredData = fullData.filter(row => {
-                const columnIndex = fullData[0].indexOf(filterColumn);
                 return row[columnIndex].toLowerCase().includes(filterValue);
             });
 
-            populateTable(filteredData, fullData[0]);
+            populateTable(filteredData, headers);
         }
     </script>
 </body>
