@@ -3,103 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleeper Discounts Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
-    <style>
-        #table-container {
-            margin-top: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        #filter-container {
-            margin-bottom: 10px;
-        }
-        label, select, input {
-            margin-right: 10px;
-        }
-    </style>
+    <title>Interactive Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 </head>
 <body>
+
     <h1>Sleeper Discounts Dashboard</h1>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Player</th>
+                <th>Sport</th>
+                <th>Prop</th>
+                <th>Original</th>
+                <th>Discounted</th>
+                <th>Percentage</th>
+                <th>Actual</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+    </table>
 
-    <div id="table-container">
-        <h2>Data Table</h2>
-        <div id="filter-container">
-            <label for="filter-column">Filter by Column:</label>
-            <select id="filter-column">
-                <!-- Options will be populated dynamically -->
-            </select>
-            <input type="text" id="filter-value" placeholder="Filter value">
-            <button onclick="applyFilter()">Apply Filter</button>
-        </div>
-        <table id="data-table">
-            <thead>
-                <tr>
-                    <!-- Headers will be populated dynamically -->
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be populated dynamically -->
-            </tbody>
-        </table>
-    </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script>
-        const csvUrl = 'https://raw.githubusercontent.com/potternate/potternate.github.io/main/sleeperdashboard/newsleeperdiscounts.csv';
-
-        let fullData = []; // To store the full dataset
-        let headers = []; // To store headers separately
-
-        Papa.parse(csvUrl, {
-            download: true,
-            header: true,
-            complete: (result) => {
-                headers = result.meta.fields; // Get column headers
-                fullData = result.data; // Get data rows
-
-                populateTable(fullData, headers);
-                populateFilterOptions(headers);
-            },
-            error: (error) => console.error('Error loading or parsing CSV:', error)
+    $(document).ready(function() {
+        $('#example').DataTable({
+            "ajax": "https://raw.githubusercontent.com/potternate/potternate.github.io/sleeperdashboard/newsleeperdiscounts.csv",
+            "columns": [
+                { "data": "Date" },
+                { "data": "Player" },
+                { "data": "Sport" },
+                { "data": "Prop" },
+                { "data": "Original" },
+                { "data": "Discounted" },
+                { "data": "Percentage" },
+                { "data": "Actual" },
+                { "data": "Status" }
+            ]
         });
-
-        function populateTable(data, headers) {
-            const table = document.getElementById('data-table');
-            const thead = table.querySelector('thead tr');
-            const tbody = table.querySelector('tbody');
-
-            // Populate headers
-            thead.innerHTML = headers.map(header => `<th>${header}</th>`).join('');
-
-            // Populate rows
-            tbody.innerHTML = data.map(row => `<tr>${headers.map(header => `<td>${row[header]}</td>`).join('')}</tr>`).join('');
-        }
-
-        function populateFilterOptions(headers) {
-            const filterColumn = document.getElementById('filter-column');
-            filterColumn.innerHTML = headers.map(header => `<option value="${header}">${header}</option>`).join('');
-        }
-
-        function applyFilter() {
-            const filterColumn = document.getElementById('filter-column').value;
-            const filterValue = document.getElementById('filter-value').value.toLowerCase();
-
-            const filteredData = fullData.filter(row => {
-                return row[filterColumn].toLowerCase().includes(filterValue);
-            });
-
-            populateTable(filteredData, headers);
-        }
+    });
     </script>
+
 </body>
 </html>
