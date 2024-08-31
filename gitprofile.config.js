@@ -130,6 +130,13 @@ const config = {
       imageUrl: 'https://play-lh.googleusercontent.com/A-Rnrh0J7iKmABskTonqFAANRLGTGUg_nuE4PEMYwJavL3nPt5uWsU2WO_DSgV_mOOM=w480-h960-rw',
       link: 'https://twitter.com/peepthispic',
     },
+    {
+      title: 'Milwaukee Crime Analysis',
+      description:
+        'Analyzing crime in the metropolitan Milwaukee area,',
+      imageUrl: 'https://cdn.firespring.com/images/e30eb1ee-f950-4080-8f7f-de72cb9175c5.jpg',
+      link: 'https://drive.google.com/file/d/1Pwoy5OVqk9bkFic0WyLUTHjSubSmQ4O_/view',
+    },
   ],
   // Display blog posts from your medium or dev account. (Optional)
   blog: {
