@@ -110,6 +110,13 @@ const config = {
   // To hide the `My Projects` section, keep it empty.
   externalProjects: [
     {
+      title: 'DFS Promo Analysis',
+      description:
+        'Comparing the performance of promos offered by major DFS apps. ',
+      imageUrl: 'https://cdn.mos.cms.futurecdn.net/3zgJx2foZasejkHFrNEjYS.jpg',
+      link: 'https://lookerstudio.google.com/s/kIXzBFlKNcU',
+    },
+    {
       title: 'Web Development',
       description:
         'I built a website for a valet company using HTML, CSS, and JavaScript.',
