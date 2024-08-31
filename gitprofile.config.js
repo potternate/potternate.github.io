@@ -50,7 +50,7 @@ const config = {
   experiences: [
     {
       company: 'Head Royce School',
-      position: 'Computer Science Educator',
+      position: 'Computer Science Instructor',
       from: 'August 2023',
       to: 'June 2024',
       companyLink: 'https://www.headroyce.org/',
