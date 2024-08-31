@@ -112,7 +112,7 @@ const config = {
     {
       title: 'DFS Promo Analysis',
       description:
-        'Comparing the performance of promos offered by major DFS apps. ',
+        'Comparing the performance of promos offered by major DFS apps.',
       imageUrl: 'https://cdn.mos.cms.futurecdn.net/3zgJx2foZasejkHFrNEjYS.jpg',
       link: 'https://lookerstudio.google.com/s/kIXzBFlKNcU',
     },
@@ -133,7 +133,7 @@ const config = {
     {
       title: 'Milwaukee Crime Analysis',
       description:
-        'Analyzing crime in the metropolitan Milwaukee area,',
+        'Analyzing crime in the metropolitan Milwaukee area.',
       imageUrl: 'https://cdn.firespring.com/images/e30eb1ee-f950-4080-8f7f-de72cb9175c5.jpg',
       link: 'https://drive.google.com/file/d/1Pwoy5OVqk9bkFic0WyLUTHjSubSmQ4O_/view',
     },
