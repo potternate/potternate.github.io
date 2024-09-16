@@ -52,7 +52,7 @@ const config = {
       company: 'Head Royce School',
       position: 'Computer Science Instructor',
       from: 'August 2023',
-      to: 'June 2024',
+      to: 'Present',
       companyLink: 'https://www.headroyce.org/',
     },
     {
@@ -114,7 +114,7 @@ const config = {
       description:
         'Comparing the performance of promos offered by major DFS apps.',
       imageUrl: 'https://cdn.mos.cms.futurecdn.net/3zgJx2foZasejkHFrNEjYS.jpg',
-      link: 'https://lookerstudio.google.com/s/kIXzBFlKNcU',
+      link: 'https://lookerstudio.google.com/reporting/8dfdbaa5-6239-4528-8e31-cd5134d5293d',
     },
     {
       title: 'Web Development',
