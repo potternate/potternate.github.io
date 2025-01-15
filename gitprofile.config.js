@@ -131,13 +131,6 @@ const config = {
       link: 'https://lookerstudio.google.com/reporting/8dfdbaa5-6239-4528-8e31-cd5134d5293d',
     },
     {
-      title: 'Web Development',
-      description:
-        'I built a website for a valet company using HTML, CSS, and JavaScript.',
-      imageUrl: 'https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png',
-      link: 'https://precision-parking-valet.web.app',
-    },
-    {
       title: 'Twitter Reddit Bot',
       description:
         'An Automated Twitter Bot that scrapes images and captions from a custom Reddit Feed',
