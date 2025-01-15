@@ -127,7 +127,7 @@ const config = {
       title: 'DFS Promo Looker Dashboard',
       description:
         'Comparing the performance of promos offered by major DFS apps in a Looker Studio dashboard.',
-      imageUrl: 'https://www.marceldigital.com/media/0yncqj5k/looker-studio-logo-2.png?rmode=max&width=400&height=358',
+      imageUrl: 'https://www.marceldigital.com/media/0yncqj5k/looker-studio-logo-2.png',
       link: 'https://lookerstudio.google.com/reporting/8dfdbaa5-6239-4528-8e31-cd5134d5293d',
     },
     {
