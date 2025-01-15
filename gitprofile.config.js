@@ -124,10 +124,10 @@ const config = {
       link: 'https://prop-bet.netlify.app/',
     },
     {
-      title: 'DFS Promo Analysis',
+      title: 'DFS Promo Looker Dashboard',
       description:
-        'Comparing the performance of promos offered by major DFS apps.',
-      imageUrl: 'https://cdn.mos.cms.futurecdn.net/3zgJx2foZasejkHFrNEjYS.jpg',
+        'Comparing the performance of promos offered by major DFS apps in a Looker Studio dashboard.',
+      imageUrl: 'https://www.marceldigital.com/media/0yncqj5k/looker-studio-logo-2.png?rmode=max&width=400&height=358',
       link: 'https://lookerstudio.google.com/reporting/8dfdbaa5-6239-4528-8e31-cd5134d5293d',
     },
     {
