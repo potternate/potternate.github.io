@@ -116,6 +116,13 @@ const config = {
 
   // To hide the `My Projects` section, keep it empty.
   externalProjects: [
+      {
+      title: 'Mock DFS App',
+      description:
+        'Built a mock DFS app with React front end and data stored in firebase.',
+      imageUrl: 'https://imaginesports.com/wp-content/uploads/2019/02/Why-Do-People-Play-Fantasy-Sports.jpg',
+      link: 'https://prop-bet.netlify.app/',
+    },
     {
       title: 'DFS Promo Analysis',
       description:
