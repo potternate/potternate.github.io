@@ -120,7 +120,7 @@ const config = {
       title: 'PropBet',
       description:
         'Built a mock DFS app with React front end and data stored in firebase.',
-      imageUrl: 'https://imaginesports.com/wp-content/uploads/2019/02/Why-Do-People-Play-Fantasy-Sports.jpg',
+      imageUrl: 'https://i.imgur.com/2MXvGki.png',
       link: 'https://prop-bet.netlify.app/',
     },
     {
