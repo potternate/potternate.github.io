@@ -120,7 +120,7 @@ const config = {
       title: 'PropBet',
       description:
         'Built a mock DFS app with React front end and data stored in firebase.',
-      imageUrl: 'https://imgur.com/a/3ANWMvq.png',
+      imageUrl: 'https://i.imgur.com/GTqS0VX.jpeg',
       link: 'https://prop-bet.netlify.app/',
     },
     {
