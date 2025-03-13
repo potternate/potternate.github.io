@@ -49,10 +49,17 @@ const config = {
   ],
   experiences: [
     {
+      company: 'Hippocratic AI',
+      position: 'Junior AI Engineer',
+      from: 'March 2025',
+      to: 'Present',
+      companyLink: 'https://www.hippocraticai.com/',
+    },    
+    {
       company: 'Head Royce School',
       position: 'Advancement Assistant',
       from: 'September 2024',
-      to: 'Present',
+      to: 'March 2025',
       companyLink: 'https://www.headroyce.org/',
     },
     {
